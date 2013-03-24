@@ -12,8 +12,11 @@ public:
     File(std::string fname,std::string path);
     ~File();
     size_t size;
-    void edit();
+    void rename(std::string new_name);
+    void edit(std::string text);
     void viewFileInfo();
+    void cat();
+    std::string text;
     std::string extension;
 };
 

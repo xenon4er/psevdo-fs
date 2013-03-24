@@ -1,6 +1,6 @@
 #include "file.h"
 #include <iostream>
-
+#include <ctime>
 File::File()
 {
     this->name = "sd";
@@ -15,6 +15,18 @@ File::File(std::string fname, std::string path)
 
 }
 
+
+void File::rename(std::string new_name)
+{
+    this->name = new_name;
+}
+
+void File::edit(std::string text)
+{
+    this->text = text;
+    this->atr->edit_date = time(0);
+}
+
 void File::viewFileInfo()
 {
     if(this == NULL) return;
@@ -24,6 +36,11 @@ void File::viewFileInfo()
     std::cout << "path: " << this->atr->path << std::endl;
     std::cout << "create date: " << ctime(&this->atr->create_date);// << std::endl;
     std::cout << "edit date: " << ctime(&this->atr->edit_date) << std::endl;
+}
+
+void File::cat()
+{
+    std::cout << this->text << std::endl;
 }
 
 File::~File(){

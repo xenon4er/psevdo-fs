@@ -8,9 +8,8 @@ class Parent
 {
 public:
     Parent();
-    ~Parent();
-    void rename(std::string new_name);
-    void moveTo();
+
+    //virtual void rename() = 0;
     std::string name;
     Attribute *atr;
     //Folder parent;
